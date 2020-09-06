@@ -21,6 +21,10 @@ class App extends React.Component {
     e.preventDefault();
     console.log("addItem handler");
   };
+  clearCompleted = (e) => {
+    e.preventDefault();
+    console.log("clear completed handler");
+  };
 
   render() {
     return (
@@ -28,7 +32,7 @@ class App extends React.Component {
         <h1>Welcome to your Todo App!</h1>
         <Todo />
         <TodoList taskData={this.state} />
-        <TodoForm addItem={this.addItem} />
+        <TodoForm addItem={this.addItem} clearCompleted={this.clearCompleted} />
       </div>
     );
   }
