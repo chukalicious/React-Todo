@@ -9,19 +9,30 @@ class App extends React.Component {
 
   constructor() {
     super();
-    this.state = {
-      task: "",
-      id: Date.now(),
-      completed: false,
-    };
+    this.state = [
+      {
+        task: "",
+        id: Date.now(),
+        completed: false,
+      },
+    ];
   }
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
+
+  //event on add button
   addItem = (e) => {
     e.preventDefault();
     console.log("addItem handler");
+    this.setState({
+      task: "",
+      id: Date.now(),
+      completed: false,
+    });
+    console.log("this.state after clicking the add button", this.state);
   };
 
+  //event on clicking completed button
   clearCompleted = (e) => {
     e.preventDefault();
     console.log("clear completed handler");
