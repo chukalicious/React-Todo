@@ -1,4 +1,8 @@
 import React from "react";
+import Todo from "./components/Todo";
+import "./components/Todo.css";
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -15,8 +19,11 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div className="App">
+        <h1>Welcome to your Todo App!</h1>
+        <Todo />
+        <TodoList taskData={this.state} />
+        <TodoForm />
       </div>
     );
   }
