@@ -28,7 +28,13 @@ class App extends React.Component {
   };
 
   handleInputChange = (e) => {
-    console.log(e.target.value);
+    e.persist();
+    const newTask = {
+      ...this.state,
+      [e.target.name]: e.target.value,
+    };
+    this.setState(newTask);
+    console.log("newTask", newTask);
   };
 
   render() {
