@@ -1,6 +1,14 @@
 import React from "react";
 
 class TodoForm extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("Props passed down to the TodoForm component", props);
+    this.state = {
+      task: "",
+    };
+  }
+
   render() {
     return (
       <div>
