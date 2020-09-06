@@ -5,7 +5,19 @@ class TodoForm extends React.Component {
     return (
       <div>
         <h2>This is the TodoForm Component</h2>
-        <form></form>
+        <form>
+          <label htmlFor="task">
+            <input
+              type="text"
+              id="task"
+              name="task"
+              placeholder="Enter new item"
+            />
+          </label>
+          <br />
+          <button>Add Todo</button>
+          <button>Clear Completed</button>
+        </form>
       </div>
     );
   }
