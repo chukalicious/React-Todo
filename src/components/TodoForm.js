@@ -5,6 +5,7 @@ class TodoForm extends React.Component {
     return (
       <div>
         <h2>This is the TodoForm Component</h2>
+        <form></form>
       </div>
     );
   }
