@@ -16,6 +16,7 @@ class App extends React.Component {
         completed: false,
       },
     ];
+    console.log("initial state", this.state);
   }
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state

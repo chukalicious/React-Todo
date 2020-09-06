@@ -12,6 +12,15 @@ class TodoList extends React.Component {
     return (
       <div>
         <h2>This is the TodoList Component</h2>
+        {console.log("taskData", this.props.taskData)}
+        {this.props.taskData.map((task) => {
+          return (
+            <div key={task.id}>
+              <p>Task: {task.task}</p>
+              <p>TaskID: {task.id}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }
