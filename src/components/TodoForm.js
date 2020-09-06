@@ -20,6 +20,7 @@ class TodoForm extends React.Component {
               id="task"
               name="task"
               placeholder="Enter new item"
+              onChange={this.props.handleInputChange}
             />
           </label>
           <br />
