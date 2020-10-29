@@ -4,14 +4,11 @@
 import React from "react";
 
 class TodoList extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      list: "",
-    };
-  }
-
   render() {
+    console.log(
+      "props from the App component to the TodoList component: ",
+      this.props
+    );
     return (
       <div>
         <h2>This is the TodoList component. </h2>
