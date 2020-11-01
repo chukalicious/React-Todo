@@ -16,35 +16,35 @@ class App extends React.Component {
     super();
     //need to put an array somewhere
     //the todos is going to be a list of strings
-    this.state = [
-      {
-        task: "what is this?",
-      },
-    ];
+    this.state = {
+      todoList: [
+        {
+          task: "what is this?",
+          id: new Date(),
+          completed: false,
+        },
+      ],
+    };
   }
 
   getTodo = (todo) => {
-    this.setState([
-      {
-        task: todo,
-        id: new Date(),
-        completed: false,
-      },
-    ]);
+    this.setState({
+      todoList: [
+        ...this.state.todoList,
+        { task: todo, id: new Date(), completed: false },
+      ],
+    });
   };
+
   handleSubmit = () => {};
 
   render() {
-    console.log(
-      "state from the App component to the Form component: ",
-      this.getTodo
-    );
     console.log("All the state in the app component: ", this.state);
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm getTodo={this.getTodo} />
-        <TodoList todo={this.state} />
+        <TodoList todo={this.state.todoList} />
       </div>
     );
   }

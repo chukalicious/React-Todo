@@ -4,19 +4,21 @@ class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: "",
+      input: "",
     };
   }
   handleChange = (e) => {
     console.log("from inside the handleChange fn: ", e.target.value);
-    this.setState({ todo: e.target.value });
-    this.props.getTodo(this.state.todo);
+    this.setState({ input: e.target.value });
+  };
+
+  addingTodo = (e) => {
+    this.props.getTodo(this.state.input);
   };
 
   postTodo = () => {};
 
   render() {
-    console.log("this.props from the App component: ", this.props);
     console.log("this is the local state of the Form component: ", this.state);
     return (
       <div>
@@ -25,10 +27,10 @@ class TodoForm extends React.Component {
           <input
             type="text"
             name="todo"
-            value={this.state.todo}
+            value={this.state.input}
             onChange={this.handleChange}
           />
-          <button>Add Todo</button>
+          <button onClick={this.addingTodo}>Add Todo</button>
           <button>Clear Completed</button>
         </form>
       </div>

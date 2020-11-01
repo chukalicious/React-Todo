@@ -12,6 +12,12 @@ class TodoList extends React.Component {
     return (
       <div>
         <h2>This is the TodoList component. </h2>
+
+        {this.props.todo.map((item, index) => (
+          <div key={index}>
+            <p>{item.task}</p>
+          </div>
+        ))}
       </div>
     );
   }
